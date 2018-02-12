@@ -29,7 +29,7 @@ public class ShopRegister implements Controller {
 		String targetViewName = "/WEB-INF/pages/home.jsp";
 		ModelAndView resp = null;
         List list=gatherInput(request);
-		String msg1 = service.registerService(list);
+		String msg1 ="test";//service.registerService(list);
 		resp = new ModelAndView(targetViewName, "msg", msg1);
 		return resp;
 	}
@@ -39,21 +39,25 @@ public class ShopRegister implements Controller {
 		ShopDTO shop = new ShopDTO();
 		AddressDTO add = new AddressDTO();
 
-		shop.setRegNo(request.getParameter("regNo"));
+		shop.setRegNo(request.getParameter("reg"));
 		shop.setName(request.getParameter("name"));
-		shop.setAdd_id(request.getParameter("addId"));
+		shop.setAdd_id("123");
+		shop.setPhone(request.getParameter("phone"));
+		shop.setShopType(request.getParameter("shopType"));
+		shop.setUserName(request.getParameter("username"));
+		shop.setPassword(request.getParameter("password"));
 		list.add(shop);
-
+        System.out.println("Controller\t"+shop);
 		add.setHouseNo(request.getParameter("houseNo"));
-		add.setStreetNo(request.getParameter("name"));
+		add.setStreetNo(request.getParameter("street"));
 		add.setVillage(request.getParameter("village"));
 		add.setLandmark(request.getParameter("landmark"));
 		add.setCity(request.getParameter("city"));
 		add.setState(request.getParameter("state"));
 		add.setCountry(request.getParameter("country"));
-
+  
 		list.add(add);
-
+       System.out.println("controller\t"+add);
 		return list;
 	}
 

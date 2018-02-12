@@ -50,5 +50,10 @@ public class AddressDTO {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+	@Override
+	public String toString() {
+		return "AddressDTO [houseNo=" + houseNo + ", streetNo=" + streetNo + ", village=" + village + ", landmark="
+				+ landmark + ", city=" + city + ", state=" + state + ", country=" + country + "]";
+	}
 
 }

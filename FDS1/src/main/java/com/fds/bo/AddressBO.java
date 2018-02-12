@@ -50,5 +50,10 @@ public class AddressBO {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+	@Override
+	public String toString() {
+		return "AddressBO [houseNo=" + houseNo + ", streetNo=" + streetNo + ", village=" + village + ", landmark="
+				+ landmark + ", city=" + city + ", state=" + state + ", country=" + country + "]";
+	}
 
 }
